@@ -368,8 +368,15 @@
                             </p>
                           </div>
                         </div>
-                        <div class="d-grid py-4 px-7 pt-8">
-                          <a href="./main/authentication-login.html" class="btn btn-outline-primary">Log Out</a>
+                        <div class="d-grid py-4 ">
+                          <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
+                            class="border-0 bg-transparent text-primary ms-auto" tabindex="0" type="button" aria-label="logout" data-bs-toggle="tooltip" 
+                            data-bs-placement="top" data-bs-title="logout">
+                            logout
+                          </a>
+                          <form action="{{ route('logout') }}" method="post" id="logout-form">
+                            @csrf
+                          </form>                        
                         </div>
                         </div>
                       </div>
